@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+@model Category
+
+@using (Html.BeginForm("Update", "Category", FormMethod.Post))
+{
+    if (ViewBag.Error == true)
+    {
+        <br />
+        <div class="alert alert-danger"> @ViewBag.ErrorMessage</div>
+    }
+    <br />
+    @Html.Label("Category Name")
+    <br />
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+}
+
+

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+@model Category
+
+@using (Html.BeginForm("Index", "Category", FormMethod.Post))
+{
+    <div class="alert alert-danger mb-2 mt-2">@Html.ValidationMessageFor(x=>x.CategoryName)</div>
+    @Html.Label("Category Name")
+    <br />
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+<br />
+@Html.Action("GetPartialViews", "Category") 

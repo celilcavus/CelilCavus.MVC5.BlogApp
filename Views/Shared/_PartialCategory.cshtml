@@ -1,0 +1,24 @@
+﻿
+@model List<Category>
+
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.CategoryName</td>
+            <td><a href="/Category/Update/@item.Id" class="btn btn-warning w-50">Update</a></td>
+            <td><a href="/Category/Delete/@item.Id" class="btn btn-danger w-50">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
