@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@model Blog
+
+@using (Html.BeginForm(MyActionName.Update.ToString(), ControllerNames.Blog.ToString(), FormMethod.Post))
+{
+    @Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-danger mt-2 mb-2" })
+    <br />
+    @Html.Label("Blog Image")
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", @type = "file" })
+    <br />
+    @Html.ValidationMessageFor(x => x.BlogTitle, "", new { @class = "text-danger mt-2 mb-2" })
+    <br />
+    @Html.Label("Blog Title")
+    @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger mt-2 mb-2" })
+    <br />
+    @Html.Label("Blog Content")
+    @Html.TextAreaFor(x => x.BlogContent, new { @class = "form-control",@style="height:150px;" })
+    <br />
+    @Html.ValidationMessageFor(x => x.BlogDate, "", new { @class = "text-danger mt-2 mb-2" })
+    <br />
+    @Html.Label("Blog Date")
+    @Html.TextBoxFor(x => x.BlogDate, new { @class = "form-control", @type = "date" })
+    <br />
+    @Html.Label("Category")
+    @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
+    <br />
+    @Html.Label("Author")
+    @Html.TextBoxFor(x => x.AuthorId, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary" type="submit">Update</button>
+
+}
+

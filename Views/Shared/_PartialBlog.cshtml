@@ -1,0 +1,31 @@
+﻿@model List<Blog>
+    
+<table class="table table-bordered text-center">
+   <thead>
+       <tr>
+           <td>ID</td>
+           <td>Image</td>
+           <td>Title</td>
+           <td>Date</td>
+           <td>Category</td>
+           <td>Author</td>
+           <td>Update</td>
+           <td>Delete</td>
+       </tr>
+   </thead>
+   <tbody>
+       @foreach (var item in Model)
+       {
+       <tr>
+           <td>@item.Id</td>
+           <td>@item.BlogImage</td>
+           <td>@item.BlogTitle</td>
+           <td>@item.BlogDate.ToShortDateString()</td>
+           <td>@item.Category.CategoryName</td>
+           <td>@item.Author.AuthorName</td>
+           <td><a href="/Blog/Update/@item.Id" class="btn btn-warning w-75">Update</a></td>
+           <td><a href="/Blog/Delete/@item.Id" class="btn btn-danger w-75">Delete</a></td>
+       </tr>
+       }
+   </tbody>
+</table>

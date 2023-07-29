@@ -5,7 +5,7 @@
 }
 @model Category
 
-@using (Html.BeginForm("Update", "Category", FormMethod.Post))
+@using (Html.BeginForm(MyActionName.Update, "Category", FormMethod.Post))
 {
     if (ViewBag.Error == true)
     {

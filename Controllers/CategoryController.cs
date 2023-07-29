@@ -36,8 +36,6 @@ namespace CelilCavus.MVC5.BlogApp.Controllers
             }
             else
             {
-                ViewBag.Error = true;
-                ViewBag.ErrorMessage = "Boş bir değer girmeye çalıştınız";
                 return View();
             }
         }

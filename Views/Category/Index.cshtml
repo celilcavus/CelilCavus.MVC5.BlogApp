@@ -7,9 +7,10 @@
 
 @model Category
 
-@using (Html.BeginForm("Index", "Category", FormMethod.Post))
+@using (Html.BeginForm(MyActionName.Index.ToString(), "Category", FormMethod.Post))
 {
-    <div class="alert alert-danger mb-2 mt-2">@Html.ValidationMessageFor(x=>x.CategoryName)</div>
+    @Html.ValidationMessageFor(x=>x.CategoryName,"",new {@class="text-danger"})
+    <br />
     @Html.Label("Category Name")
     <br />
     @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
