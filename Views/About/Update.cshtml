@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+@model About
+
+@using (Html.BeginForm(MyActionName.Update.ToString(), ControllerNames.About.ToString(), FormMethod.Post))
+{
+
+    @Html.ValidationMessageFor(x => x.AboutImage, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Image")
+    @Html.TextBoxFor(x => x.AboutImage, new { @class = "form-control", @type = "file" })
+    <br />
+
+    @Html.ValidationMessageFor(x => x.AboutTitle, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Title")
+    @Html.TextBoxFor(x => x.AboutTitle, new { @class = "form-control" })
+    <br />
+
+    @Html.ValidationMessageFor(x => x.AboutContent, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Content")
+    @Html.TextAreaFor(x => x.AboutContent, new { @class = "form-control", @style = "height:200px;" })
+    <br />
+    <button type="submit" class="btn btn-primary">Update</button>
+}

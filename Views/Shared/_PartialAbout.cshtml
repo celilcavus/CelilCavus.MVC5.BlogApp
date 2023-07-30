@@ -1,0 +1,28 @@
+﻿@model List<About>
+
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>IMAGE</td>
+            <td>TITLE</td>
+            <td>CONTENT</td>
+            <td>UPDATE</td>
+            <td>DELETE</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td><img src="@item.AboutImage" alt="" /></td>
+            <td>@item.AboutTitle</td>
+            <td>@item.AboutContent</td>
+            <td><a href="/About/Update/@item.Id" class="btn btn-warning">UPDATE</a></td>
+            <td><a href="/About/Delete/@item.Id" class="btn btn-danger">DELETE</a></td>
+        </tr>
+        }
+    </tbody>
+</table>

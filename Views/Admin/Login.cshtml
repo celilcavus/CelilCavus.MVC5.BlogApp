@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@model Admin
+
+<h2>Login</h2>
+@using (Html.BeginForm(MyActionName.Login.ToString(), ControllerNames.Admin.ToString(), FormMethod.Post))
+{
+    @Html.Label("User Name")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Password")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-primary" type="submit">Login</button>
+}
+
