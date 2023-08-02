@@ -147,12 +147,12 @@
     <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\01.EntityLayer\01.EntityLayer.csproj">
-      <Project>{D2338EC0-A3D4-4A5A-A0DA-64C0BC318DC1}</Project>
+    <ProjectReference Include="01.EntityLayer\01.EntityLayer.csproj">
+      <Project>{9331AB9A-7013-4109-99F6-8A25C55C9AD3}</Project>
       <Name>01.EntityLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\03.BusinessLayer\03.BusinessLayer.csproj">
-      <Project>{81BE5A01-9CD7-4A75-A21C-B2E881716C18}</Project>
+    <ProjectReference Include="03.BusinessLayer\03.BusinessLayer.csproj">
+      <Project>{3823FAE5-D3BA-44ED-A5FA-4E4CB5DABF36}</Project>
       <Name>03.BusinessLayer</Name>
     </ProjectReference>
   </ItemGroup>
