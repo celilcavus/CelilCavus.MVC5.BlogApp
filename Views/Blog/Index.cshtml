@@ -21,7 +21,7 @@
     @Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger mt-2 mb-2" })
     <br />
     @Html.Label("Blog Content")
-    @Html.TextAreaFor(x => x.BlogContent, new { @class = "form-control ",@style="height:150px;" })
+    @Html.TextAreaFor(x => x.BlogContent, new { @class = "form-control ", @style = "height:150px;" })
     <br />
     @Html.ValidationMessageFor(x => x.BlogDate, "", new { @class = "text-danger mt-2 mb-2" })
     <br />
@@ -29,10 +29,11 @@
     @Html.TextBoxFor(x => x.BlogDate, new { @class = "form-control", @type = "date" })
     <br />
     @Html.Label("Category")
-    @Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x => x.Category.Id, (List<SelectListItem>)ViewBag.Category, new { @class = "form-control" })
     <br />
     @Html.Label("Author")
-    @Html.TextBoxFor(x => x.AuthorId, new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.Author.Id, (List<SelectListItem>)ViewBag.Author, new { @class = "form-control" })
     <br />
     <button class="btn btn-primary" type="submit">Save</button>
 

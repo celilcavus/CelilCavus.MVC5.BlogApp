@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+@model Blog
+
+<div class="container d-flex justify-content-center mt-2 mb-2">
+    <div class="card text-center w-50 h-75">
+        <img src="https://source.unsplash.com/random/1080x1080?sig=1" class="img-top-fluid" />
+        <div class="card-body">
+            <h5 class="card-title">@Model.BlogTitle</h5>
+            <p class="card-text">@Model.BlogContent</p>
+            <a href="/Blog/Details/@Model.Id" class="btn btn-primary">Read Details</a>
+        </div>
+        <div class="card-footer text-body-secondary">
+            @Model.BlogDate
+        </div>
+    </div>
+</div>
+
+
+
+

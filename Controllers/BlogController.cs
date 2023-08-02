@@ -1,5 +1,6 @@
 ﻿using _01.EntityLayer;
 using _02.DataAccessLayer.Repository;
+using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Web.Mvc;
 
@@ -14,10 +15,37 @@ namespace CelilCavus.MVC5.BlogApp.Controllers
         {
             _repository = new BaseRepository<Blog>();
         }
-
+        private void GetCategory()
+        {
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            foreach (var item in _repository.All())
+            {
+                selectListItems.Add(new SelectListItem
+                {
+                    Text = item.Category.CategoryName,
+                    Value = item.Category.Id.ToString()
+                });
+            }
+            ViewBag.Category = selectListItems;
+        }
+        private void GetAuthor()
+        {
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            foreach (var item in _repository.All())
+            {
+                selectListItems.Add(new SelectListItem
+                {
+                    Text = item.Author.AuthorName,
+                    Value = item.Author.Id.ToString()
+                });
+            }
+            ViewBag.Author = selectListItems;
+        }
         [HttpGet]
         public ActionResult Index()
         {
+            GetCategory();
+            GetAuthor();
             return View();
         }
 
@@ -74,6 +102,8 @@ namespace CelilCavus.MVC5.BlogApp.Controllers
         {
             if (id >= 1)
             {
+                GetCategory();
+                GetAuthor();
                 var FindVal = _repository.GetById(id);
                 return View(FindVal);
             }

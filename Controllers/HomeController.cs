@@ -35,5 +35,22 @@ namespace CelilCavus.MVC5.BlogApp.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult Search()
+        {
+                return View();
+            
+        }
+        [HttpPost]
+        public ActionResult Search(string search)
+        {
+            var searchVal = _repository.All().FirstOrDefault(x => x.BlogTitle == search);
+            if (searchVal != null)
+            {
+                return View(searchVal);
+            }
+            else
+                return View();
+        }
     }
 }
