@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+@model Contact
+
+
+<h2>Contact</h2>
+<hr />
+<br />
+@using (Html.BeginForm(MyActionName.Index.ToString(), ControllerNames.Contact.ToString(), FormMethod.Post))
+{
+    @Html.Label("Name")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("SurName")
+    @Html.TextBoxFor(x => x.SurName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Subject")
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    <br />
+    @Html.Label("Message")
+    @Html.TextAreaFor(x => x.Message, new { @class = "form-control",@style="height:300px;" })
+    <br />
+    <button class="btn btn-outline-primary" type="submit">Send</button>
+}
+

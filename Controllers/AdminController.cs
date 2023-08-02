@@ -22,6 +22,10 @@ namespace CelilCavus.MVC5.BlogApp.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            if (HttpContext.Request.IsAuthenticated)
+            {
+                return RedirectToAction(nameof(SignOut));
+            }
             return View();
         }
         

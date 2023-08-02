@@ -46,7 +46,22 @@ namespace CelilCavus.MVC5.BlogApp.Controllers
             }
             return View();
         }
-
+        [AllowAnonymous]
+        public ActionResult Details(int? id)
+        {
+            if (id.HasValue && id > 0)
+            {
+                var FindVal = _repository.GetById(id.Value);
+                if (FindVal != null)
+                {
+                    return View(FindVal);
+                }
+                else
+                    return HttpNotFound();
+            }
+            else
+                return View();
+        }
         public PartialViewResult GetBlogView()
         {
             var Values = _repository.All();
